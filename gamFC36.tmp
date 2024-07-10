@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt8c0sgfndijc"]
+
+[ext_resource type="Script" path="res://TreeSpawner.gd" id="1_dverw"]
+
+[node name="Game" type="Node2D"]
+
+[node name="TreeSpawner" type="Node2D" parent="."]
+position = Vector2(608, 484)
+script = ExtResource("1_dverw")

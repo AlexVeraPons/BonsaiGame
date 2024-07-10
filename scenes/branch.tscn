@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://ysoyf0fktqiy"]
+
+[ext_resource type="Script" path="res://01scripts/branch.gd" id="1_fbgbx"]
+
+[node name="Branch" type="Area2D"]
+script = ExtResource("1_fbgbx")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+
+[node name="branch01" type="Polygon2D" parent="."]
+color = Color(0.658424, 0.438489, 0.225723, 1)
+antialiased = true
+polygon = PackedVector2Array(-5, -73, 0, -82, -3, -90, 1, -99, 3, -102, 4, -108, 0, -107, -8, -94, -9, -83)

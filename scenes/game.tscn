@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://dt8c0sgfndijc"]
+
+[ext_resource type="PackedScene" uid="uid://bnglbbs25amyk" path="res://scenes/scissors.tscn" id="1_3283t"]
+[ext_resource type="PackedScene" uid="uid://c0umpjjtvi8vf" path="res://background.tscn" id="2_h1axi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b455q"]
+size = Vector2(1302.02, 344.69)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Scissors" parent="." instance=ExtResource("1_3283t")]
+position = Vector2(569, 327)
+rotation_speed = 5.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 325)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(571, 324)
+color = Color(0.584466, 0.307476, 0.163986, 1)
+offset = Vector2(0, 1)
+antialiased = true
+polygon = PackedVector2Array(-127, 264, 97, 271, 74, 211, 72, 152, 78, 102, 117.256, 70.7089, 156, 116, 166, 120, 157.836, 104.393, 183, 78, 171, 85, 153, 97, 128.553, 61.7038, 147, 47, 206, 14, 268, -20, 242, -15, 193, 8, 201, -57, 192, -43, 180, 12, 156, 26, 128, 43, 70.9625, 76.7986, 69, 14, 71, -56, 98, -88, 148, -100, 180, -125, 211, -157, 243, -181, 201, -168, 156, -135, 125, -118, 63, -103, 60, -146, 84, -220, 123, -255, 130, -280, 102, -261, 55, -212, 40, -195, -37, -246, -76, -246, -26, -216, 4, -171, 13, -138, -69, -145, -98, -133, 0, -116, -1, -72, -6, 6, -23, 72, -67, 73, -110, 51, -96, 24, -80, 16, -59, 6, -51, 1, -50, -1, -94, 18, -85, -10, -76, -38, -72, -55, -58, -85, -71, -74, -76, -62, -80, -56, -82, -44, -86, -30, -92, -8, -100, 10, -113, 4, -118, -4, -125, -19, -128, -34, -135, -23, -115, 11, -108, 14, -106, 16, -121, 46, -167, 31, -226, 8, -272, -10, -323, -38, -341, -54, -332, -26, -312, -17, -286, 7, -258, 13, -245, 20, -332, 43, -283, 43, -219.712, 26.8629, -200, 34, -35, 116, -51, 150, -98, 219)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2(569, 327)
+scale = Vector2(1.00268, 1.16724)
+color = Color(0.188105, 0.000305991, 0.30228, 1)
+polygon = PackedVector2Array(-631.31, 233.884, -631.31, 322.983, 645.273, 322.983, 645.273, 233.884)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Polygon2D3"]
+mass = 0.01
+gravity_scale = 0.0
+freeze_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Polygon2D3/RigidBody2D"]
+position = Vector2(26.1732, 399.376)
+shape = SubResource("RectangleShape2D_b455q")
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+z_index = 2
+position = Vector2(569, 327)
+color = Color(0.440197, 0.266322, 0.635962, 1)
+polygon = PackedVector2Array(-163, 238, -122, 311, 124, 311, 165, 238, -102.825, 238)
+
+[node name="TextureRect" parent="." instance=ExtResource("2_h1axi")]
+layout_mode = 1

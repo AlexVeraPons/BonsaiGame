@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnglbbs25amyk"]
+
+[ext_resource type="Script" path="res://01scripts/Scissors.gd" id="1_hgyuc"]
+[ext_resource type="Texture2D" uid="uid://bbwghog53oyjx" path="res://Scissors.png" id="2_em738"]
+
+[sub_resource type="Animation" id="Animation_ettwx"]
+resource_name = "cut_animation"
+length = 0.6
+step = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.5),
+"transitions": PackedFloat32Array(2.63901, 81.5719, 1, 0.901251),
+"update": 0,
+"values": [Vector2(0.2, 0.372), Vector2(0.063, 0.372), Vector2(0.0633319, 0.371704), Vector2(0.2, 0.372)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_de52y"]
+_data = {
+"cut_animation": SubResource("Animation_ettwx")
+}
+
+[node name="Scissors" type="Node2D"]
+script = ExtResource("1_hgyuc")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+z_index = 1
+polygon = PackedVector2Array(-1, -60, -1, 0, 1, 0, 1, -60)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1, -20)
+rotation = 0.00908387
+scale = Vector2(0.2, 0.372)
+texture = ExtResource("2_em738")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_de52y")
+}

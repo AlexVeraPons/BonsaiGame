@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://du0y63hkaqriy"]
+
+[ext_resource type="Script" path="res://01scripts/TreeSpawner.gd" id="1_u2eyr"]
+
+[node name="TreeSpawner" type="Node2D"]
+position = Vector2(452, 244)
+script = ExtResource("1_u2eyr")

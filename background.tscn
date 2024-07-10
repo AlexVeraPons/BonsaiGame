@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0umpjjtvi8vf"]
+
+[ext_resource type="Shader" path="res://scroll.gdshader" id="1_wqwvt"]
+[ext_resource type="Texture2D" uid="uid://pwe67m3h75oa" path="res://pattern_19.png" id="2_jpbcf"]
+[ext_resource type="Texture2D" uid="uid://cseeonu5l8hog" path="res://Slide 16_9 - 1.png" id="3_st0yg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_duotc"]
+shader = ExtResource("1_wqwvt")
+
+[node name="TextureRect" type="TextureRect"]
+self_modulate = Color(0, 0, 0, 0.815686)
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_st0yg")
+expand_mode = 2
+
+[node name="Pattern" type="TextureRect" parent="."]
+modulate = Color(0.121542, 7.4344e-05, 0.17252, 1)
+z_index = -2
+texture_repeat = 2
+material = SubResource("ShaderMaterial_duotc")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2636.0
+offset_bottom = 1475.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.304089, 0.305238)
+texture = ExtResource("2_jpbcf")
+expand_mode = 2
+stretch_mode = 1
+flip_h = true
